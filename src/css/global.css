@@ -1,0 +1,310 @@
+/*!
+ * Xu's UI
+ * Copyright 2023 Easexun, Inc.
+ * Licensed under the MIT license
+ */
+
+* {
+    padding: 0;
+    margin: 0;
+    transition-timing-function: cubic-bezier(.19, 1, .22, 1);
+}
+
+body,
+html {
+    font-family: "Source Sans Pro","Helvetica Neue",Arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    color: var(--weui-FG-0);
+    line-height: 1.5;
+    background-color: var(--weui-BG-0);
+    font-size: 14px;
+    overflow-x: hidden;
+}
+
+/*body {
+    --globalnav-backdrop-filter: saturate(180%) blur(20px);
+    --globalnav-background: rgba(250, 250, 252, .8);
+}
+
+@media (prefers-color-scheme:dark) {
+    body{
+        --globalnav-background: rgba(22, 22, 23, .8);
+    }
+}*/
+
+.home__container {
+    width: 100vw;
+    height: 100vh;
+    background: vrgba(0,0,0,.9);
+    color: #FFFFFF;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    min-height: 575px;
+    position: relative;
+    overflow: hidden
+}
+
+.home__info {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 144px;
+    position: relative;
+    z-index: 1
+}
+
+@media screen and (min-width:576px) and (max-width:1024px) {
+    .home__info {
+        margin-left: 72px
+    }
+}
+
+@media screen and (max-width:576px) {
+    .home__info {
+        margin-left: 72px
+    }
+}
+
+@media screen and (max-height:768px) {
+    .home__info {
+        justify-content: flex-end
+    }
+}
+
+@media screen and (max-width:576px) {
+    .home__info {
+        margin-left: 40px;
+        justify-content: flex-end
+    }
+}
+
+@media screen and (min-width:1600px) {
+    .home__info {
+        margin-left: 10%
+    }
+}
+
+.home-menu {
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px
+}
+
+@media screen and (max-width:576px) {
+    .home-menu {
+        margin-top: 36px
+    }
+}
+
+@-webkit-keyframes home-appear {
+    0% {
+        transform: translateY(24px);
+        opacity: 0
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1
+    }
+}
+
+@keyframes home-appear {
+    0% {
+        transform: translateY(24px);
+        opacity: 0
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1
+    }
+}
+
+.home-menu__item {
+    margin: 8px -4px;
+    padding: 4px;
+    text-decoration: none;
+    color: hsla(0, 0%, 100%, .9);
+    font-size: 20px;
+    position: relative
+}
+
+.home-menu__item:first-child {
+    -webkit-animation: home-appear .5s 1.05s forwards;
+    animation: home-appear .5s 1.05s forwards
+}
+
+.home-menu__item:first-child,
+.home-menu__item:nth-child(2) {
+    transform: translateY(-100%);
+    opacity: 0;
+    will-change: oapcity, transform
+}
+
+.home-menu__item:nth-child(2) {
+    -webkit-animation: home-appear .5s 1.2s forwards;
+    animation: home-appear .5s 1.2s forwards
+}
+
+.home-menu__item:nth-child(3) {
+    -webkit-animation: home-appear .5s 1.35s forwards;
+    animation: home-appear .5s 1.35s forwards
+}
+
+.home-menu__item:nth-child(3),
+.home-menu__item:nth-child(4) {
+    transform: translateY(-100%);
+    opacity: 0;
+    will-change: oapcity, transform
+}
+
+.home-menu__item:nth-child(4) {
+    -webkit-animation: home-appear .5s 1.5s forwards;
+    animation: home-appear .5s 1.5s forwards
+}
+
+.home-menu__item:nth-child(5) {
+    -webkit-animation: home-appear .5s 1.65s forwards;
+    animation: home-appear .5s 1.65s forwards
+}
+
+.home-menu__item:nth-child(5),
+.home-menu__item:nth-child(6) {
+    transform: translateY(-100%);
+    opacity: 0;
+    will-change: oapcity, transform
+}
+
+.home-menu__item:nth-child(6) {
+    -webkit-animation: home-appear .5s 1.8s forwards;
+    animation: home-appear .5s 1.8s forwards
+}
+
+.home-menu__item:visited {
+    color: rgba(255,255,255,0.5);
+}
+
+.home-menu__item:hover {
+    color: #07c160
+}
+
+@media screen and (max-width:576px) {
+    .home-menu__item {
+        font-size: 18px
+    }
+}
+
+@media screen and (min-width:2160px) {
+    .home-menu__item {
+        font-size: 22px
+    }
+}
+
+.home__footer {
+    position: absolute;
+    bottom: 84px;
+    left: 0;
+    opacity: .5;
+    font-weight: 200;
+    letter-spacing: .035em;
+    font-size: 15px
+}
+
+.home__footer-icp,
+.home__footer-copyright {
+    font-size: 12px;
+    color: currentColor !important;
+}
+
+.home__footer-icp {
+    display: inline-block;
+    margin-top: 14px;
+    margin-bottom: 2px
+}
+
+.home__footer-icp:hover,
+.home__footer-icp:active {
+    text-decoration: underline;
+}
+
+@media screen and (max-height:768px) {
+    .home__footer {
+        bottom: 0;
+        position: relative;
+        margin: 68px 0 76px
+    }
+}
+
+@media screen and (max-width:576px) {
+    .home__footer {
+        bottom: 0;
+        position: relative;
+        margin: 68px 0 76px
+    }
+}
+
+@media screen and (min-width:2160px) {
+    .home__footer {
+        font-size: 17px
+    }
+}
+
+.home__brand {
+    width: 300px;
+    height: 70px;
+    pointer-events: none;
+    margin-top: 8px;
+    transform: translateY(-100%);
+    opacity: 0;
+    will-change: oapcity, transform;
+    -webkit-animation: home-appear .5s .9s forwards;
+    animation: home-appear .5s .9s forwards;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-delay: .5s;
+    animation-delay: .5s;
+    transform: none !important
+}
+
+@media screen and (max-width:576px) {
+    .home__brand {
+        width: 180px;
+        height: 42px
+    }
+}
+
+@media screen and (min-width:2160px) {
+    .home__brand {
+        width: 342.85714286px;
+        height: 80px
+    }
+}
+
+.home__background {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: .3s
+}
+
+.home__background .cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    /*background: var(--globalnav-background);
+    webkit-backdrop-filter: var(--globalnav-backdrop-filter);
+    backdrop-filter: var(--globalnav-backdrop-filter);*/
+}
+
+#startrack {
+    height: 140%;
+    width: 100%;
+}
