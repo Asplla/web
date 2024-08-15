@@ -1,47 +1,13 @@
-<!doctype html>
-<html>
-
-<head>
-  <meta charset="UTF-8">
-  <title>Xu"s Cloud</title>
-  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/weui/2.6.5/style/weui.min.css">
-  <link rel="stylesheet" href="src/css/global.css">
-  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-</head>
-
-<body>
-  <div class="home__container">
-    <div class="home__info">
-      <div class="home__brand">
-        <svg aria-hidden="true" viewBox="0 0 453.54 396.85" version="1.1" width="32" height="32" class="home__brand_logo" data-view-component="true">
-          <g>
-            <rect x="167.34" y="102.62" width="110.95" height="248.31" />
-            <g>
-              <polygon points="0,0 115.45,0 149.93,396.85 35.98,396.85 " />
-              <polygon points="453.54,0 338.1,0 303.61,396.85 417.56,396.85 " />
-            </g>
-          </g>
-        </svg>
-        <div class="home__brand_text">XU"S CLOUD</div>
-      </div>
-      <div class="home-menu">
-        <a href="https://status.wxss.fit" target="_blank" class="home-menu__item">服务状态</a>
-      </div>
-      <div class="home__footer">
-        <div>Xu"s Home Cloud Center</div>
-        <div class="home__footer-copyright">Copyright © 2016-2024 Easexun All Rights Reserved.</div>
-      </div>
-    </div>
-    <div class="home__background">
-      <canvas id="startrack"></canvas>
-      <div class="cover"></div>
-      <div class="mask"></div>
-    </div>
-  </div>
-  <script>
-    Object.prototype.location, window.requestAnimFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function (t) { window.setTimeout(t, 1e3 / 60) }, $(function () { var t, e, o = document.createElement("canvas"), i = document.getElementById("startrack"); i.width = o.width = t = i.offsetWidth, i.height = o.height = e = i.offsetHeight; var n = Math.max(t, e); o.width = 2.6 * n, o.height = 2.6 * n; var a = i.getContext("2d"), r = o.getContext("2d"), l = t, d = [], c = 0; function h(t, e) { var o = e - t, i = Math.random(); return t + Math.round(i * o) } function u() { a.drawImage(o, -o.width / 2, -o.height / 2) } function w() { u(), ++c > 150 && c % 8 == 0 && (a.fillStyle = "rgba(0,0,0,.04)", a.fillRect(-3 * n, -3 * n, 6 * n, 6 * n)), f(.025) } function f(t) { a.rotate(t * Math.PI / 180) } a.fillStyle = "rgba(22,22,23,0.8)", a.fillRect(0, 0, t, e), a.lineCap = "round"; for (var m, s, g, b, v = 2e4; v--;)m = void 0, s = void 0, g = void 0, b = void 0, d.push({ x: h(-o.width, o.width), y: h(-o.height, o.height), size: 1.2, color: (m = h(120, 255), s = h(120, 255), g = h(120, 255), b = h(30, 100) / 100, "rgba(" + m + "," + s + "," + g + "," + b + ")") }); !function () { for (var t = d.length; t--;) { var e = d[t]; r.beginPath(), r.arc(e.x, e.y, e.size, 0, 2 * Math.PI, !0), r.fillStyle = e.color, r.closePath(), r.fill() } }(); var p = l; a.translate(p, 0), function t() { requestAnimFrame(t), w() }(), window.onresize = function () { i.width = t = i.offsetWidth, i.height = e = i.offsetHeight, a.fillStyle = "rgba(21,21,21,1)", a.fillRect(0, 0, t, e) } }), window.onscroll = function () { t(window).scrollTop() > .6 * t(window).height() ? t(".background").addClass("fixed") : t(".background").removeClass("fixed") }
-  </script>
-  <script src="https://static.cloudflareinsights.com/beacon.min.js"></script>
-</body>
-
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
 </html>

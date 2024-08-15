@@ -1,0 +1,47 @@
+@import './weui.css';
+
+@font-face {
+  font-family: BrandonText-Black;
+  src: url('@/assets/fonts/BrandonText-Black.otf')
+}
+
+body {
+  background-color: var(--weui-BG-2);
+  color: var(--weui-FG-0);
+}
+
+.layout {
+  padding: var(--td-size-8) var(--td-size-8);
+}
+
+.result-success-logo{
+  fill: var(--weui-FG-0);
+}
+
+.result-success {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.result-success-title {
+  margin-top: var(--td-size-4);
+  font: var(--td-font-title-large);
+  font-family: BrandonText-Black;
+  font-weight: initial;
+  color: var(--weui-FG-0);
+  text-align: center;
+}
+.result-success-describe {
+  margin: var(--td-size-5) 0 var(--td-size-10);
+  font: var(--td-font-body-medium);
+  color: var(--weui-FG-1);
+}
+.result-success-btns .t-button {
+  border-radius: 20px;
+}
+.result-success-btns .t-button+.t-button {
+  margin-left: var(--td-size-5);
+}
