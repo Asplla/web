@@ -12,12 +12,16 @@
         </svg>
         <div class="result-success-title">Xu's Cloud</div>
         <div class="result-success-describe">非公开访问页面，请关闭浏览器</div>
-        <div class="result-success-btns" style="display: none;">
-          <t-button theme="primary" size="medium" variant="base">填充按钮</t-button>
-          <t-button theme="primary" size="medium" variant="outline">运行状态</t-button>
+        <div class="result-success-btns">
+          <t-button href="https://status.wxss.fit" theme="primary" size="large">
+            <template #icon><data-icon /></template>
+            系统运行状态
+          </t-button>
         </div>
     </div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script lang="tsx" setup>
+  import { DataIcon } from 'tdesign-icons-vue-next';
+</script>
