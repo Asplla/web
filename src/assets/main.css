@@ -4,7 +4,14 @@
   font-family: BrandonText-Black;
   src: url('@/assets/fonts/BrandonText-Black.otf')
 }
-
+:root {
+  --weui-logo-text: #000427;
+}
+@media (prefers-color-scheme:dark) {
+  :root {
+    --weui-logo-text: #FFFFFF;
+  }
+}
 body {
   background-color: var(--weui-BG-2);
   color: var(--weui-FG-0);
@@ -13,11 +20,15 @@ body {
 .layout {
   padding: var(--td-size-8) var(--td-size-8);
 }
-
-.result-success-logo{
-  fill: var(--weui-FG-0);
+.result-success-logo .st0{
+  fill: var(--td-brand-color);
 }
-
+.result-success-logo .st1{
+  fill: #FFFFFF;
+}
+.result-success-logo .st2{
+  fill: var(--weui-logo-text);
+}
 .result-success {
   display: flex;
   flex-direction: column;
@@ -27,9 +38,8 @@ body {
 }
 
 .result-success-title {
-  margin-top: var(--td-size-4);
+  margin-top: var(--td-size-13);
   font: var(--td-font-title-large);
-  font-family: BrandonText-Black;
   font-weight: initial;
   color: var(--weui-FG-0);
   text-align: center;

@@ -7,7 +7,7 @@ const routes = [
     name: 'home',
     component: HomeView,
     meta: {
-      title: "Xu's Cloud",
+      title: "wxhub",
     },
   },
   {
