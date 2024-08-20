@@ -5,10 +5,12 @@
   src: url('@/assets/fonts/BrandonText-Black.otf')
 }
 :root {
+  --weui-logo-icon: var(--td-brand-color);
   --weui-logo-text: #000427;
 }
 @media (prefers-color-scheme:dark) {
   :root {
+    --weui-logo-icon: #FFFFFF;
     --weui-logo-text: #FFFFFF;
   }
 }
@@ -21,12 +23,9 @@ body {
   padding: var(--td-size-8) var(--td-size-8);
 }
 .result-success-logo .st0{
-  fill: var(--td-brand-color);
+  fill: var(--weui-logo-icon);
 }
 .result-success-logo .st1{
-  fill: #FFFFFF;
-}
-.result-success-logo .st2{
   fill: var(--weui-logo-text);
 }
 .result-success {
