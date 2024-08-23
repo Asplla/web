@@ -5,6 +5,7 @@ import Error404 from '../components/result/404.vue'
 const routes = [
   {
     path: '/',
+    publicPath: './',
     name: 'home',
     component: HomeView,
     meta: {
