@@ -41,7 +41,7 @@ router.beforeEach((to,from,next)=>{
     document.title = String(to.meta.title)
   }
   //执行进入路由，如果不写就不会进入目标页
-  next()
+  next();
 })
 
 export default router
