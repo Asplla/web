@@ -17,7 +17,9 @@
       <div class="result-success-describe">如有疑问，请联系76005434@qq.com</div>
       <div class="result-success-btns">
         <t-button href="https://status.wxss.fit" theme="primary" size="large">
-          <template #icon><data-icon /></template>
+          <template #icon>
+            <IconBrandRedux size="24"/>
+          </template>
           系统运行状态
         </t-button>
       </div>
@@ -26,5 +28,5 @@
 </template>
 
 <script lang="tsx" setup>
-import { DataIcon } from "tdesign-icons-vue-next";
+import { IconBrandRedux } from '@tabler/icons-vue';
 </script>

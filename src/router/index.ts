@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import Error404 from '../components/result/404.vue'
 
 const routes = [
   {
@@ -7,15 +8,23 @@ const routes = [
     name: 'home',
     component: HomeView,
     meta: {
-      title: "wxhub",
+      title: "WXHUB",
     },
   },
   {
-    path: '/about',
+    path: '/About',
     name: 'about',
     component: () => import('../views/AboutView.vue'),
     meta: {
-      title: "Xu's System Status",
+      title: "NOT FOUND - WXHUB",
+    },
+  },
+  {
+    path: '/:pathMatch(.*)*', // 捕获所有无法匹配的路径
+    name: 'Error404',
+    component: Error404,
+    meta: {
+      title: "NOT FOUND - WXHUB",
     },
   }
 ]

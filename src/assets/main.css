@@ -4,21 +4,37 @@
   font-family: BrandonText-Black;
   src: url('@/assets/fonts/BrandonText-Black.otf')
 }
-:root {
+:root, .wx-root, body {
+  --weui-BG-0: #F8F8F8;
   --weui-logo-icon: var(--td-brand-color);
   --weui-logo-text: #000427;
+  --weui-result-st0: var(--weui-logo-icon);
+  --weui-result-st1: #EEF2FD;
+  --weui-result-st2: #FFFFFF;
+  --weui-result-st3: #232B41;
+  --weui-result-st4: #D6D8E2;
 }
 @media (prefers-color-scheme:dark) {
-  :root {
+  :root, .wx-root, body {
     --weui-logo-icon: #FFFFFF;
     --weui-logo-text: #FFFFFF;
+    --weui-result-st0: var(--weui-logo-icon);
+    --weui-result-st1: #000;
+    --weui-result-st2: #232B41;
+    --weui-result-st3: #454C5E;
+    --weui-result-st4: #1D2535;
   }
 }
-body {
-  background-color: var(--weui-BG-2);
-  color: var(--weui-FG-0);
+.wx-root, body, .t-layout, .t-layout__direction-vertical {
+  background-color: var(--weui-BG-0) !important;
+  color: var(--weui-FG-0) !important;
 }
-
+.t-button {
+  border-radius: 8px !important;
+}
+.t-button svg + .t-button__text:not(:empty) {
+  margin-left: 8px;
+}
 .layout {
   padding: var(--td-size-8) var(--td-size-8);
 }

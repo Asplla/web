@@ -11,6 +11,7 @@
     "type-check": "vue-tsc --build --force"
   },
   "dependencies": {
+    "@tabler/icons-vue": "^3.12.0",
     "axios": "^1.7.4",
     "pinia": "^2.1.7",
     "tdesign-icons-vue-next": "^0.2.4",
