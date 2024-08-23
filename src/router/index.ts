@@ -12,7 +12,7 @@ const routes = [
     },
   },
   {
-    path: '/About',
+    path: '/about',
     name: 'about',
     component: () => import('../views/AboutView.vue'),
     meta: {
