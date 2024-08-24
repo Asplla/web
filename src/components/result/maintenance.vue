@@ -37,13 +37,22 @@
         </svg>
       </div>
       <div class="wx-result-ft">
-        <h1 class="result-title">页面正在建设中</h1>
-        <p class="result-description">如有疑问，请联系76005434@qq.com</p>
+        <h1 class="result-title">系统维护中</h1>
+        <p class="result-description">系统维护中，请稍后再试</p>
+        <t-space style="margin-top: 32px;">
+          <t-button theme="primary" size="large" variant="base" href="/">
+            <template #icon>
+              <IconArrowBack size="24"/>
+            </template>
+            返回首页
+          </t-button>
+        </t-space>
       </div>
     </div>
   </div>
 </template>
-
-<script lang="tsx" setup>
-import { IconBrandRedux } from '@tabler/icons-vue';
+<script lang="ts" setup>
+import { IconArrowBack, IconBrandRedux } from '@tabler/icons-vue';
 </script>
+<style scoped>
+</style>

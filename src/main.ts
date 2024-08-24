@@ -1,4 +1,5 @@
 import './assets/main.css'
+import './assets/wxhub.css'
 
 import { createApp } from 'vue'
 import TDesign from 'tdesign-vue-next';

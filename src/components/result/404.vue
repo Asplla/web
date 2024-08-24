@@ -1,7 +1,7 @@
 <template>
-  <div class="global-result">
-    <div class="global-result-container">
-      <div class="global-result-bd">
+  <div class="wx-result">
+    <div class="wx-result-container">
+      <div class="wx-result-bd">
         <svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" fill="none" viewBox="0 0 800 600">
           <path d="M649.951 544.225C649.951 547.416 541.744 550 408.158 550C274.571 550 166.364 547.416 166.364 544.225C166.364 541.034 274.571 538.45 408.158 538.45C541.744 538.45 649.951 541.034 649.951 544.225Z" class="st4" opacity="0.5" />
           <path d="M146 285.714C146 327.964 190.681 358.511 210.286 392.553C230.65 427.66 235.514 481.459 270.62 501.672C304.663 521.429 353.143 499.392 395.392 499.392C437.641 499.392 486.122 521.429 520.164 501.672C555.271 481.307 560.134 427.66 580.499 392.553C600.255 358.511 644.784 327.812 644.784 285.714C644.784 243.617 600.103 212.918 580.499 178.875C560.286 143.769 555.271 89.9697 520.164 69.7569C486.122 50.0001 437.641 72.0366 395.392 72.0366C353.143 72.0366 304.663 50.0001 270.62 69.7569C235.514 90.1217 230.65 143.769 210.286 178.875C190.529 212.918 146 243.617 146 285.714Z" class="st1" opacity="0.4" />
@@ -59,7 +59,7 @@
           <path d="M501.775 256.991C497.672 256.079 492.049 254.407 486.122 251.368C480.802 248.632 476.851 245.593 473.812 243.009C476.243 242.705 483.234 242.249 490.529 246.049C497.216 249.544 500.559 254.711 501.775 256.991Z" fill="#232B41" />
         </svg>
       </div>
-      <div class="global-result-ft">
+      <div class="wx-result-ft">
         <h1 class="result-title">404 Not Found</h1>
         <p class="result-description">抱歉，您访问的页面不存在</p>
         <t-space style="margin-top: 32px;">
@@ -78,62 +78,4 @@
 import { IconArrowBack, IconBrandRedux } from '@tabler/icons-vue';
 </script>
 <style scoped>
-.global-result {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.global-result-container {
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 16px;
-}
-@media (min-width: 960px) {
-  .global-result-container {
-    padding: 0 21px;
-  }
-}
-.global-result-bd {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 32px;
-}
-.global-result-bd svg {
-  width: auto;
-  height: 300px;
-}
-.global-result-bd svg .st0 {
-  fill: var(--weui-result-st0);
-}
-.global-result-bd svg .st1 {
-  fill: var(--weui-result-st1);
-}
-.global-result-bd svg .st2 {
-  fill: var(--weui-result-st2);
-}
-.global-result-bd svg .st3 {
-  fill: var(--weui-result-st3);
-}
-.global-result-bd svg .st4 {
-  fill: var(--weui-result-st3);
-}
-.global-result-ft {
-  text-align: center;
-  max-width: 45rem;
-  margin: 0 auto;
-}
-.result-title {
-  font-size: 32px;
-  margin-bottom: 8px;
-  color: var(--weui-FG-0);
-}
-.result-description {
-  font-size: 18px;
-  color: var(--weui-FG-1);
-}
 </style>
