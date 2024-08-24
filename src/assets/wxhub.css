@@ -1,12 +1,16 @@
 :root {
   --wx-header-bg: rgba(250, 250, 252, .8);
   --wx-header-backdrop-filter: saturate(180%) blur(20px);
+  --wx-iptv-banner-mask: #000;
+  --wx-iptv-banner-stroke: #e5e7eb;
 }
 
 @media (prefers-color-scheme:dark) {
   :root {
     --wx-header-bg: rgba(22, 22, 23, 0.8);
     --wx-header-backdrop-filter: saturate(180%) blur(20px);
+    --wx-iptv-banner-mask: #FFFFFF;
+    --wx-iptv-banner-stroke: rgba(255, 255, 255, 0.1);
   }
 }
 
@@ -38,52 +42,64 @@
   align-items: center;
   justify-content: center;
 }
+
 .wx-result-container {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 16px;
 }
+
 @media (min-width: 960px) {
   .wx-result-container {
     padding: 0 21px;
   }
 }
+
 .wx-result-bd {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 32px;
 }
+
 .wx-result-bd svg {
   width: auto;
   height: 300px;
 }
+
 .wx-result-bd svg .st0 {
   fill: var(--weui-result-st0);
 }
+
 .wx-result-bd svg .st1 {
   fill: var(--weui-result-st1);
 }
+
 .wx-result-bd svg .st2 {
   fill: var(--weui-result-st2);
 }
+
 .wx-result-bd svg .st3 {
   fill: var(--weui-result-st3);
 }
+
 .wx-result-bd svg .st4 {
   fill: var(--weui-result-st3);
 }
+
 .wx-result-ft {
   text-align: center;
   max-width: 45rem;
   margin: 0 auto;
 }
+
 .result-title {
   font-size: 32px;
   margin-bottom: 8px;
   color: var(--weui-FG-0);
 }
+
 .result-description {
   font-size: 18px;
   color: var(--weui-FG-1);
@@ -119,6 +135,8 @@
 
 .wx-header-wapper.transparent {
   background: transparent;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
 }
 
 .wx-header-wapper.scroll::before {
@@ -233,11 +251,11 @@
   transition: 0.3s;
 }
 
-.wx-header-nav ul li:hover a {
+.wx-header-nav ul li a:hover {
   color: var(--weui-FG-0);
 }
 
-.wx-header-nav ul li.active a {
+.wx-header-nav ul li a.router-link-active {
   color: var(--td-brand-color);
 }
 
@@ -335,17 +353,20 @@
     padding: 32px 120px;
   }
 }
+
 .wx-footer a {
   font-size: 14px;
   color: var(--weui-FG-1);
   cursor: pointer;
   transition: 0.3s;
 }
+
 .wx-footer a:hover {
   color: var(--weui-FG-0);
 }
 
-.wx-footer-l, .wx-footer-r {
+.wx-footer-l,
+.wx-footer-r {
   display: flex;
   align-items: center;
 }
@@ -373,6 +394,4 @@
   transform: scaleX(0.5);
 }
 
-.wx-footer-r {
-
-}
+.wx-footer-r {}

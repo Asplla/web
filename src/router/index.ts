@@ -13,6 +13,14 @@ const routes = [
     },
   },
   {
+    path: '/iptv',
+    name: 'iptv',
+    component: () => import('../views/IptvView.vue'),
+    meta: {
+      title: "NOT FOUND - WXHUB",
+    },
+  },
+  {
     path: '/about',
     name: 'about',
     component: () => import('../views/AboutView.vue'),
@@ -35,9 +43,9 @@ const router = createRouter({
   routes
 })
 
-router.beforeEach((to,from,next)=>{
+router.beforeEach((to, from, next) => {
   //beforeEach是router的钩子函数，在进入路由前执行
-  if(to.meta.title){
+  if (to.meta.title) {
     //判断是否有标题
     document.title = String(to.meta.title)
   }

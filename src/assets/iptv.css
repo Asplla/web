@@ -1,0 +1,42 @@
+.iptv-banner-warp {
+  position: relative;
+  overflow: hidden;
+}
+
+.iptv-banner-warp .iptv-banner-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-mask-image: radial-gradient(100% 100% at top right, var(--wx-iptv-banner-mask), transparent);
+  mask-image: radial-gradient(100% 100% at top right, var(--wx-iptv-banner-mask), transparent);
+  stroke: var(--wx-iptv-banner-stroke);
+  inset: 0px;
+}
+
+.iptv-banner-warp .iptv-banner-halo {
+  position: absolute;
+  top: calc(50% - 30rem);
+  left: calc(50% - 24rem);
+  filter: blur(64px) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+  transform: translate3d(var(--tw-translate-x), var(--tw-translate-y), 0) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  display: none;
+}
+@media (prefers-color-scheme:dark) {
+  .iptv-banner-warp .iptv-banner-halo {
+    display: block;
+  }
+}
+.iptv-banner-warp .iptv-banner-halo .halo-c {
+  opacity: 0.2;
+  --tw-gradient-to: #4f46e5 var(--tw-gradient-to-position);
+  --tw-gradient-from: #80caff var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(128 202 255 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+  width: 1108px;
+  aspect-ratio: 1108 / 632;
+}
+
+.iptv-banner-tv {
+  background-image: url('@/assets/img/iptv/iptv_banner_bg.jpg');
+}

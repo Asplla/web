@@ -18,11 +18,11 @@
       </a>
       <div class="wx-header-nav transition-all">
         <ul>
-          <li class="active">
-            <a href="/">首页</a>
+          <li class="active"> 
+            <RouterLink to="/">首页</RouterLink>
           </li>
           <li>
-            <a href="https://iptv.wxss.fit" target="_blank">IPTV</a>
+            <RouterLink to="iptv">IPTV</RouterLink>
           </li>
           <li>
             <a href="https://docs.wxss.fit" target="_blank">文档</a>
@@ -47,7 +47,7 @@
 import { ref, onMounted, onUnmounted } from 'vue';
 import { IconBrandRedux } from '@tabler/icons-vue';
 const isScroll = ref(true);
-const navOffset = 100;
+const navOffset = 1;
 
 const handleScroll = () => {
   isScroll.value = window.scrollY > navOffset ? false : true;

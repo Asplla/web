@@ -3,7 +3,7 @@ import './assets/wxhub.css'
 
 import { createApp } from 'vue'
 import TDesign from 'tdesign-vue-next';
-import axios from 'axios'
+import axios from 'axios' 
 import { createPinia } from 'pinia'
 
 import App from './App.vue'
