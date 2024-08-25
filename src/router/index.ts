@@ -17,7 +17,7 @@ const routes = [
     name: 'iptv',
     component: () => import('../views/IptvView.vue'),
     meta: {
-      title: "NOT FOUND - WXHUB",
+      title: "IPTV Sources - WXHUB",
     },
   },
   {
