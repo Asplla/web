@@ -30,6 +30,11 @@ export default {
       return map
     }, {}),
     extend: {
+      zIndex: {
+        '1028': '1028',
+        '1029': '1029',
+        '1030': '1030',
+      },
       // 宽度
       width: Array.from({ length: 1000 }).reduce((map, _, index) => {
         map[index] = `${index}px`

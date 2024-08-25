@@ -34,6 +34,14 @@
   transition-duration: .15s;
 }
 
+.clip-invisible {
+  clip-path: polygon(-10% -10%, 110% -10%, 110% -10%, -10% -10%);
+}
+
+.clip-visible {
+  clip-path: polygon(-10% -10%, 110% 0%, 110% 110%, -10% 110%);
+}
+
 .wx-result {
   position: relative;
   width: 100vw;
@@ -105,12 +113,12 @@
   color: var(--weui-FG-1);
 }
 
+.wx-active-bg:active {
+  background-color: var(--weui-FG-5);
+}
+
 .wx-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1029;
+  
 }
 
 @media (prefers-color-scheme:dark) {
@@ -119,18 +127,15 @@
   }
 }
 
-.wx-header-wapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 72px;
-  padding: 0 20px;
-  transition-duration: .2s;
+.wx-backdrop-bg {
   background: var(--wx-header-bg);
   -webkit-backdrop-filter: var(--wx-header-backdrop-filter);
   backdrop-filter: var(--wx-header-backdrop-filter);
-  z-index: 1028;
+}
+.wx-header-wapper {
+  background: var(--wx-header-bg);
+  -webkit-backdrop-filter: var(--wx-header-backdrop-filter);
+  backdrop-filter: var(--wx-header-backdrop-filter);
 }
 
 .wx-header-wapper.transparent {
@@ -152,33 +157,9 @@
   color: var(--weui-FG-3);
   -webkit-transform-origin: 0 0;
   transform-origin: 0 0;
-  -webkit-transform: scaleY(0.5);
-  transform: scaleY(0.5);
+  /*-webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);*/
   z-index: 2;
-}
-
-@media (min-width: 600px) {
-  .wx-header-wapper {
-    padding: 0 40px;
-  }
-}
-
-@media (min-width: 960px) {
-  .wx-header-wapper {
-    padding: 0 64px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .wx-header-wapper {
-    padding: 0 40px;
-  }
-}
-
-@media (min-width: 1440px) {
-  .wx-header-wapper {
-    padding: 0 120px;
-  }
 }
 
 .wx-header-logo {

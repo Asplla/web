@@ -1,6 +1,6 @@
 <template>
-  <header class="wx-header transform">
-    <div class="wx-header-wapper" :class="{'transparent' : isScroll, 'scroll' : !isScroll}">
+  <header class="wx-header fixed top-0 left-0 right-0 z-1029 transform">
+    <div class="wx-header-wapper relative flex items-center justify-between duration-200 h-72 pl-20 pr-20 600:pl-40 600:pr-40 960:pl-64 960:pr-64 1024:pl-40 1024:pr-40 1440:pl-120 1440:pr-120" :class="{'transparent' : isScroll && !openDripNav, 'scroll' : !isScroll || openDripNav}">
       <a class="wx-header-logo transform transition-all" href="/">
         <svg aria-hidden="true" viewBox="0 0 2526.1 808" version="1.1" width="113" height="36" class="result-success-logo" data-view-component="true">
           <g xmlns="http://www.w3.org/2000/svg">
@@ -18,14 +18,9 @@
       </a>
       <div class="wx-header-nav transition-all">
         <ul>
-          <li class="active"> 
-            <RouterLink to="/">首页</RouterLink>
-          </li>
-          <li>
-            <RouterLink to="iptv">IPTV</RouterLink>
-          </li>
-          <li>
-            <a href="https://docs.wxss.fit" target="_blank">文档</a>
+          <li v-for="(nav, index) in navList" :key="index">
+            <a :href="nav.href" :target="nav.target" v-if="nav.href.startsWith('http')">{{ nav.name }}</a>
+            <RouterLink :to="nav.href" v-else>{{ nav.name }}</RouterLink>
           </li>
         </ul>
       </div>
@@ -35,24 +30,47 @@
         </template>
         系统运行状态
       </t-button>
-      <svg width="24" height="24" viewBox="0 0 24 24" class="wx-header-nav-toggler transform transition-all" fill="var(--weui-FG-0)">
+      <svg width="24" height="24" viewBox="0 0 24 24" class="wx-header-nav-toggler transform transition-all" :class="{ 'active' : openDripNav}" fill="var(--weui-FG-0)" @click="toggleDripNav">
         <path class="center transform" d="M4 11.5C4 11.2239 4.22386 11 4.5 11H19.5C19.7761 11 20 11.2239 20 11.5V12.5C20 12.7761 19.7761 13 19.5 13H4.5C4.22386 13 4 12.7761 4 12.5V11.5Z"></path>
         <rect class="top transform transition-all" x="4" y="5" width="16" height="2" rx="0.5" style="transform-origin: 50% 25%;"></rect>
         <rect class="bottom transform transition-all" x="4" y="17" width="16" height="2" rx="0.5" style="transform-origin: 50% 75%;"></rect>
       </svg>
+    </div>
+    <div class="fixed top-72 left-0 w-screen z-1030 wx-backdrop-bg transition-all transform origin-top" :class="{ 'opacity-100  visible clip-visible duration-400' : openDripNav, 'opacity-0 invisible clip-invisible duration-250' : !openDripNav}" style="height: calc(-72px + 100vh);">
+      <div class="relative overflow-hidden" style="height: calc(-72px + 100vh);">
+        <ul class="absolute transform z-1 top-0 w-full h-full pb-56 px-10 600:px-40 960:px-64 1024:px-40 1200:px-80 1440:px-120 pt-8 transition-all duration-400 transform-gpu overflow-y-auto scrollbar-hidden">
+          <li class="relative text-14 font-bold text-tp-800 cursor-pointer" v-for="(nav, index) in navList" :key="index" @click="toggleDripNav">
+            <a class="flex items-center h-56 pl-14 pr-10 transition-all rounded-6 wx-active-bg" :href="nav.href" :target="nav.target" v-if="nav.href.startsWith('http')">{{ nav.name }}</a>
+            <RouterLink class="flex items-center h-56 pl-14 pr-10 transition-all rounded-6 wx-active-bg" :to="nav.href" v-else>{{ nav.name }}</RouterLink>
+            <div class="absolute bottom-0 left-0 w-full h-1 transform origin-left duration-400 scale-x-100" style="background: var(--weui-FG-3);"></div>
+          </li>
+        </ul>
+      </div>
     </div>
   </header>
 </template>
 <script lang="tsx" setup>
 import { ref, onMounted, onUnmounted } from 'vue';
 import { IconBrandRedux } from '@tabler/icons-vue';
+const navList = [
+  {name: '首页', 'href': '/'},
+  {name: 'IPTV', 'href': 'iptv'},
+  {name: '文档', 'href': 'https://docs.wxss.fit', target: '_blank'},
+  {name: '关于', 'href': '/about'},
+];
 const isScroll = ref(true);
 const navOffset = 1;
+const openDripNav = ref(false);
 
 const handleScroll = () => {
   isScroll.value = window.scrollY > navOffset ? false : true;
   console.log(isScroll);
 };
+
+const toggleDripNav = () => {
+  openDripNav.value = openDripNav.value == true ? false :true;
+  document.body.style.overflow = openDripNav.value == true ? 'hidden' : '';
+}
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll);
