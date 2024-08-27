@@ -1,9 +1,7 @@
-import './assets/main.css'
-import './assets/wxhub.css'
+import './assets/global.css'
 
 import { createApp } from 'vue'
 import TDesign from 'tdesign-vue-next';
-import axios from 'axios' 
 import { createPinia } from 'pinia'
 
 import App from './App.vue'
@@ -17,7 +15,6 @@ const app = createApp(App)
 
 app.use(createPinia())
 app.use(TDesign);
-app.use(axios)
 app.use(router)
 
 app.mount('#app')
