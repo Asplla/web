@@ -7,7 +7,7 @@ const routes = [
     name: 'home',
     component: HomeView,
     meta: {
-      title: "wxhub iptv",
+      title: "WXHUB",
     },
   },
   {
